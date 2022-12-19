@@ -12,6 +12,8 @@
     layout: "default",
   })
 
+  console.log("RUN: about.vue")
+
 </script>
 
 <style scoped>
