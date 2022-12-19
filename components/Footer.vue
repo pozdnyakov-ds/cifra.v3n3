@@ -16,7 +16,8 @@
 
 <style scoped>
 .v-footer {
-    background-color: #aaa;
+    background-color: #263238;
     height: 50px;
+    color: white;
 }
 </style>

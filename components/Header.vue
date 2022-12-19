@@ -1,6 +1,6 @@
 <template>
 <v-app-bar
-        color="#eee"
+        color="#cfd8dc"
         density="compact"
     >
         <template v-slot:prepend>
