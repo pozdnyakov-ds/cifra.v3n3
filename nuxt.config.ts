@@ -25,4 +25,6 @@ export default defineNuxtConfig({
         noExternal: ['vuetify'],
       },
   },
+  modules: [
+  ],
 })
