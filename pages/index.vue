@@ -9,11 +9,18 @@
 
       <p>--{{ pending }}--</p>
 
+      <p>Name: {{ userStore.name }} </p>
+      <p>Phone: {{ userStore.getPhone }} </p>
+
     </ul>
   </div>
 </template>
 
 <script setup>
+import { useUserStore } from '~/stores/users'
+const userStore = useUserStore()
+console.log("STORE: ", userStore);
+  
   console.log("RUN: index.vue")
 
   definePageMeta({
@@ -34,6 +41,8 @@
   const add = () => {
     count.value++
     refresh()
+    userStore.setPhone("--000--") 
+    console.log("Name: ", userStore.getName);
   }
 
   const foo = useCookie("foo")
@@ -41,7 +50,7 @@
   console.log("FOO: ", foo.value);
 
   // const getApiData = () = {
-  //   return useFetch('/api')
+  //   return await useFetch('/api')
   // }
 
   const { data: user, pending, refresh } = await useFetch('/api')

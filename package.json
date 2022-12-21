@@ -8,7 +8,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "lastest"
+    "@pinia/nuxt": "^0.4.6",
+    "nuxt": "^3.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
