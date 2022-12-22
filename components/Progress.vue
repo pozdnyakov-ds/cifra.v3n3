@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="container" v-if="show">
+    <div class="container" v-if="mainStore.progress">
             <v-progress-circular
                 indeterminate
                 color="green"
@@ -11,7 +11,7 @@
 
 <script setup>
     const mainStore = useMainStore()
-    const show = mainStore.progress
+    // const show = mainStore.progress
 </script>
 
 <style scoped>
@@ -24,6 +24,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #EEEEEE33;
+    background-color: #CCCCCC77;
 }
 </style>
