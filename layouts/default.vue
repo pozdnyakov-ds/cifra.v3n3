@@ -7,13 +7,12 @@
             </v-container>
         </v-main>
         <Footer />
+        <Progress />
     </v-app>
 </template>
 
-<script>
-    export default {
-        
-    }
+<script setup>
+
 </script>
 
 <style>

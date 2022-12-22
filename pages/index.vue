@@ -18,8 +18,6 @@
 </template>
 
 <script setup>
-// import { useUserStore } from '~/stores/users'
-
 const userStore = useUserStore()
 console.log("STORE: ", userStore)
   
@@ -45,6 +43,13 @@ console.log("STORE: ", userStore)
     refresh()
     userStore.setPhone("--000--") 
     console.log("Name: ", userStore.getPhone);
+
+    // const mainStore = useMainStore()
+    // mainStore.progress = true
+    // setTimeout(() => {
+    //   mainStore.progress = false
+    // }, 1000)
+
   }
 
   const foo = useCookie("foo")
@@ -58,7 +63,19 @@ console.log("STORE: ", userStore)
   const { data: user, pending, refresh } = await useFetch('/api')
   console.log("API: ", JSON.parse(user.value))
 
-  const mainStore = useMainStore();
+  const mainStore = useMainStore()
+  mainStore.progress = true;
+  setTimeout(() => {
+    mainStore.progress = false
+  }, 3000)
+
+  // setInterval(() => {
+  //   mainStore.progress = true;
+  //   console.log("Refresh...")
+  //   refresh()
+  //   mainStore.progress = false;
+  // }, 1000)
+
   console.log("App name: ", mainStore.app)
   
 </script>
