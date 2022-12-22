@@ -30,7 +30,8 @@ export default defineNuxtConfig({
       {
         autoImports: ['defineStore', 'acceptHMRUpdate'],
       }
-    ]  
+    ],
+    '@vueuse/nuxt',
   ],
   imports: {
     dirs: ['stores'],
