@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-const userStore = useUserStore()
-console.log("STORE: ", userStore)
+  const userStore = useUserStore()
+  console.log("STORE: ", userStore)
   
   console.log("RUN: index.vue")
 
@@ -37,7 +37,7 @@ console.log("STORE: ", userStore)
     ]
   })
 
-  let count = ref(0);
+  let count = ref(0)
   const add = () => {
     count.value++
     refresh()
@@ -54,7 +54,7 @@ console.log("STORE: ", userStore)
 
   const foo = useCookie("foo")
   foo.value = 'data'
-  console.log("FOO: ", foo.value);
+  console.log("FOO: ", foo.value)
 
   // const getApiData = () = {
   //   return await useFetch('/api')
@@ -68,6 +68,10 @@ console.log("STORE: ", userStore)
   setTimeout(() => {
     mainStore.progress = false
   }, 3000)
+
+  watch(pending, (newValue, oldValue) => { 
+    mainStore.progress = newValue
+  })
 
   // setInterval(() => {
   //   mainStore.progress = true;
