@@ -7,7 +7,8 @@
       <button class="btn" @click="add">Add</button>
       {{ count }}
 
-      <p>--{{ pending }}--</p>
+      <div class="loader" v-if="pending">Загрузка</div>
+      <div v-else>Готово</div>
 
       <p>Name: {{ userStore.name }} </p>
       <p>Phone: {{ userStore.getPhone }} </p>
@@ -17,9 +18,10 @@
 </template>
 
 <script setup>
-import { useUserStore } from '~/stores/users'
+// import { useUserStore } from '~/stores/users'
+
 const userStore = useUserStore()
-console.log("STORE: ", userStore);
+console.log("STORE: ", userStore)
   
   console.log("RUN: index.vue")
 
@@ -28,11 +30,11 @@ console.log("STORE: ", userStore);
   })
 
   useHead({
-    title: 'ToDo App',
+    title: 'CIFRA TEST',
     meta: [
       {
         name: 'description',
-        content: 'Nuxt 3 ToDo App with Composition API'
+        content: 'CIFRA TEST: Nuxt3, Composition API, Pinia'
       }
     ]
   })
@@ -42,7 +44,7 @@ console.log("STORE: ", userStore);
     count.value++
     refresh()
     userStore.setPhone("--000--") 
-    console.log("Name: ", userStore.getName);
+    console.log("Name: ", userStore.getPhone);
   }
 
   const foo = useCookie("foo")
@@ -56,6 +58,8 @@ console.log("STORE: ", userStore);
   const { data: user, pending, refresh } = await useFetch('/api')
   console.log("API: ", JSON.parse(user.value))
 
+  const mainStore = useMainStore();
+  console.log("App name: ", mainStore.app)
   
 </script>
 
@@ -64,5 +68,11 @@ button {
   border: 1px dotted #333;
   border-radius: 5px;
   padding: 5px 15px 5px 15px;
+}
+.loader {
+  left: 0;
+  top: 0;
+  right: 0
+  
 }
 </style>

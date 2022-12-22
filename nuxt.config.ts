@@ -26,6 +26,13 @@ export default defineNuxtConfig({
       },
   },
   modules: [
-    '@pinia/nuxt'
+    ['@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'acceptHMRUpdate'],
+      }
+    ]  
   ],
+  imports: {
+    dirs: ['stores'],
+  },
 })

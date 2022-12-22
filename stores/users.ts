@@ -1,9 +1,9 @@
-import { defineStore } from 'pinia'
+// import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore('user', {
     state: () => ({
         name: 'Дмитрий',
-        surname: 'Поздняков',
+        surname: 'Поздняков', 
         email: '2903015@gmail.com',
         phone: '+79872903015'
     }),
@@ -18,3 +18,10 @@ export const useUserStore = defineStore('user', {
         }
     }
 })
+
+// interface UserInfo {
+//     name: string
+//     surname: string
+//     email: string
+//     phone: string
+// }
