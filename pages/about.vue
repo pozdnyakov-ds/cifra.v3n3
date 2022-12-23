@@ -3,6 +3,7 @@
       <ul>
         <li><NuxtLink to="/">Home</NuxtLink></li>
         <li>About</li>
+        <li><NuxtLink to="/items">Items</NuxtLink></li>
       </ul>
       <div>pos: {{ x }}, {{ y }}</div>
     </div>

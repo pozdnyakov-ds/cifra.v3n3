@@ -3,17 +3,19 @@
     <ul>
       <li>Home</li>
       <li><NuxtLink to="/about">About</NuxtLink></li>
-      
-      <button class="btn" @click="add">Add</button>
-      {{ count }}
-
-      <div class="loader" v-if="pending">Загрузка</div>
-      <div v-else>Готово</div>
-
-      <p>Name: {{ userStore.name }} </p>
-      <p>Phone: {{ userStore.getPhone }} </p>
-
+      <li><NuxtLink to="/items">Items</NuxtLink></li>
+      <li><NuxtLink to="/items/1">Item 1</NuxtLink></li>
     </ul>
+
+    <button class="btn" @click="add">Add</button>
+    {{ count }}
+
+    <div class="loader" v-if="pending">Загрузка</div>
+    <div v-else>Готово</div>
+
+    <p>Name: {{ userStore.name }} </p>
+    <p>Phone: {{ userStore.getPhone }} </p>
+    
   </div>
 </template>
 
