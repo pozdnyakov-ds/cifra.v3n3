@@ -4,12 +4,12 @@
     </div>
 </template>
 
-<script>
-    export default {
-        
-    }
+<script setup>
+    definePageMeta({
+        layout: "default",
+    })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>

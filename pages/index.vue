@@ -21,7 +21,7 @@
 
 <script setup>
   const userStore = useUserStore()
-  console.log("STORE: ", userStore)
+  //console.log("STORE: ", userStore)
   
   console.log("RUN: index.vue")
 
@@ -62,7 +62,10 @@
   //   return await useFetch('/api')
   // }
 
-  const { data: user, pending, refresh } = await useFetch('/api')
+  // const { data: user, pending, refresh } = await useFetch('/api')
+  const { data: user, pending, refresh } = await useAsyncData('/api',
+    () => $fetch('/api'))
+
   console.log("API: ", JSON.parse(user.value))
 
   const mainStore = useMainStore()
