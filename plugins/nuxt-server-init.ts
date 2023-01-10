@@ -9,5 +9,10 @@ export default defineNuxtPlugin(async () => {
 
     console.log("Процесс на сервере...")
     store.app = "Server patch app name"
+    
+    // const mainStore = useMainStore()
+    // mainStore.socket = $nuxtSocket({
+    //     channel: '/index'
+    // })
 
   });
