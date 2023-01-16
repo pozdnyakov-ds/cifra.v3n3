@@ -1,11 +1,6 @@
 <template>
   <div>
-    <ul>
-      <li>Home</li>
-      <li><NuxtLink to="/about">About</NuxtLink></li>
-      <li><NuxtLink to="/items">Items</NuxtLink></li>
-      <li><NuxtLink to="/items/1">Item 1</NuxtLink></li>
-    </ul>
+    <h3>HOME</h3>
 
     <button class="btn" @click="add">Add</button>
     {{ count }}

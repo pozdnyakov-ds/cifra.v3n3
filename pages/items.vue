@@ -1,9 +1,7 @@
 <template>
     <div>
-        <p><strong>ITEMS</strong></p>
+        <h3>ITEMS</h3>
         <ul>
-            <li><NuxtLink to="/">Home</NuxtLink></li>
-            <li><NuxtLink to="/about">About</NuxtLink></li>
             <li><NuxtLink to="/items">Items</NuxtLink></li>
             <li><NuxtLink to="/items/1">Open page 1</NuxtLink></li>
             <li><NuxtLink to="/items/2">Open page 2</NuxtLink></li>

@@ -25,6 +25,9 @@ export default defineNuxtConfig({
         noExternal: ['vuetify'],
       },
   },
+  server: {
+    port: 3000,
+  },
   modules: [
     ['@pinia/nuxt',
       {
@@ -32,7 +35,15 @@ export default defineNuxtConfig({
       }
     ],
     '@vueuse/nuxt',
+    'nuxt-socket-io'
   ],
+  io: {
+    sockets: [{
+      default: true, 
+      name: 'main', 
+      url: 'http://localhost:3000'
+    }]
+  },
   imports: {
     dirs: ['stores'],
   },
