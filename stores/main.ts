@@ -3,7 +3,6 @@ export const useMainStore = defineStore('main', {
         app: 'Cifra Pinia Test',
         description: 'Pinia store application...', 
         progress: false,
-        socket: {},
-        socketClients: []
+        socket: null
     })
 })
