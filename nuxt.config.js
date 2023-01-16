@@ -37,7 +37,8 @@ export default defineNuxtConfig({
   io: {     
     sockets: [{
       name: 'main',
-      url: 'http://localhost:4000'
+      url: 'http://localhost:4000',
+      default: true,
     }]
   },
   imports: {

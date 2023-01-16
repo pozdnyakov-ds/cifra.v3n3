@@ -24,23 +24,9 @@ io.on('connection', (socket) => {
         break;
       case 'contacts':
         io.emit('contacts', msg);
-        break;  
+        break;
     }
   });
-  
-  // socket.on('about-message', msg => {
-  //   console.log('Message to about: ', msg);
-  //   io.emit('about-message', msg);
-  // });
-
-  // socket.on('contacts-message', msg => {
-  //   console.log('Message to contacts: ', msg);
-  //   io.emit('contacts-message', msg);
-  // });
-
-  // setTimeout(() => {
-  //   io.emit('from-server-message', 'From server message');
-  // }, 5000);
 
 });
 

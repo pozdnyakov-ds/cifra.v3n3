@@ -42,7 +42,7 @@
   }  
 
   onMounted(() => {
-    mainStore.socket = getCurrentInstance().proxy.$nuxtSocket({
+    mainStore.socket = useNuxtApp().$nuxtSocket({
         name: 'main',
         // channel: '/index'
     })
