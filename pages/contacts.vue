@@ -6,9 +6,7 @@
         <li>Contacts</li>
         <li><NuxtLink to="/items">Items</NuxtLink></li>
       </ul>
-      <!-- <div>pos: {{ x }}, {{ y }}</div> -->
       <button style="border: 1px solid #333; padding: 5px;" @click="sendMessage">Send message to About</button>
-      <button style="border: 1px solid #333; padding: 5px; margin: 0 20px;" @click="sendServerMessage">Send message to server</button>
     </div>
 </template>
 
@@ -17,41 +15,14 @@
   definePageMeta({
     layout: "default",
   })
-
-  const { x, y } = useMouse()
-
-  const mainStore = useMainStore()
+ 
+  onMounted(() => {
+    console.log(`Contacts onMounted`);
+  })
 
   const sendMessage = () => {
-    mainStore.socket.emit("message", {
-      sender: 'contacts',
-      recipient: 'about',
-      message: 'Message to About'
-    }, (resp) => {
-      // handle response, if any
-    })
+    console.log(`Contacts sendMessage...`);
   }
-  const sendServerMessage = () => {
-    mainStore.socket.emit("message", {
-      sender: 'contacts',
-      recipient: 'server',
-      message: 'Message to Server'
-    }, (resp) => {
-      // handle response, if any
-    })
-  }  
-
-  onMounted(() => {
-    mainStore.socket = useNuxtApp().$nuxtSocket({
-        name: 'main',
-        // channel: '/index'
-    })
-
-    mainStore.socket.on('contacts', (msg) => {
-      console.log(`We got message from ${msg.sender} to ${msg.recipient}: ${msg.message}`);
-    })
-
-  })
 
 </script>
 

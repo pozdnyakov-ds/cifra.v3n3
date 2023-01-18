@@ -32,15 +32,7 @@ export default defineNuxtConfig({
       }
     ],
     '@vueuse/nuxt',
-    'nuxt-socket-io',
   ],
-  io: {     
-    sockets: [{
-      name: 'main',
-      url: 'http://localhost:4000',
-      default: true,
-    }]
-  },
   imports: {
     dirs: ['stores'],
   },
